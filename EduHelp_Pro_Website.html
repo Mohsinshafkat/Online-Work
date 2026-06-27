@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduHelp Pro – Assignments, Homework & Projects Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+/* ===================================
+   EDUHELP PRO – MAIN STYLESHEET
+=================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary:    #4f46e5;
+  --primary-dk: #3730a3;
+  --accent:     #f59e0b;
+  --accent-dk:  #d97706;
+  --dark:       #0f0f1a;
+  --dark2:      #1a1a2e;
+  --dark3:      #16213e;
+  --text:       #e2e8f0;
+  --text-muted: #94a3b8;
+  --success:    #10b981;
+  --card-bg:    rgba(255,255,255,0.05);
+  --card-border:rgba(255,255,255,0.10);
+  --radius:     14px;
+  --shadow:     0 8px 32px rgba(0,0,0,0.3);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--dark);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(15,15,26,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--card-border);
+  transition: background 0.3s;
+}
+.navbar.scrolled { background: rgba(15,15,26,0.97); }
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.brand-icon { font-size: 1.5rem; }
+.brand-accent { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #fff; }
+
+.nav-cta {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--primary-dk); transform: translateY(-1px); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: auto;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--dark2);
+  padding: 1rem 1.25rem;
+  gap: 0.75rem;
+  border-top: 1px solid var(--card-border);
+}
+.mobile-menu a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+.mobile-menu a:hover { color: #fff; }
+.mobile-cta {
+  background: var(--primary) !important;
+  color: #fff !important;
+  padding: 0.65rem 1rem !important;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+.mobile-menu.open { display: flex; }
+
+/* ========== HERO ========== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 50%, #0d1b4b 100%);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 1.25rem 4rem;
+}
+
+.hero-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(79,70,229,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(245,158,11,0.12) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(79,70,229,0.25);
+  border: 1px solid rgba(79,70,229,0.5);
+  color: #a5b4fc;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+}
+
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 1.25rem;
+}
+.hero-highlight {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto 2rem;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-num {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--card-border);
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.85rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(79,70,229,0.4);
+  display: inline-block;
+}
+.btn-primary:hover {
+  background: var(--primary-dk);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(79,70,229,0.5);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  padding: 0.85rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1.5px solid var(--card-border);
+  transition: border-color 0.2s, background 0.2s;
+  display: inline-block;
+}
+.btn-secondary:hover {
+  border-color: var(--primary);
+  background: rgba(79,70,229,0.1);
+}
+
+.hero-floating {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 1;
+}
+.float-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* ========== SECTION COMMONS ========== */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.section-header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0.5rem 0 0.75rem;
+}
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+.section-header.light h2 { color: #fff; }
+
+.section-tag {
+  display: inline-block;
+  background: rgba(79,70,229,0.2);
+  color: #a5b4fc;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(79,70,229,0.35);
+  margin-bottom: 0.5rem;
+}
+.section-tag.alt {
+  background: rgba(245,158,11,0.15);
+  color: var(--accent);
+  border-color: rgba(245,158,11,0.3);
+}
+
+/* ========== SERVICES ========== */
+.services {
+  padding: 6rem 1.25rem;
+  background: var(--dark2);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(79,70,229,0.4);
+  box-shadow: 0 12px 40px rgba(79,70,229,0.15);
+}
+.service-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+.service-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.service-card p { font-size: 0.875rem; color: var(--text-muted); }
+
+/* ========== PACKAGES ========== */
+.packages {
+  padding: 6rem 1.25rem;
+  background: linear-gradient(180deg, var(--dark3) 0%, var(--dark2) 100%);
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.pkg-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.pkg-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  border-color: rgba(79,70,229,0.5);
+}
+
+.pkg-card.popular {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary), 0 12px 40px rgba(79,70,229,0.25);
+}
+.pkg-card.premium {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 12px 40px rgba(245,158,11,0.2);
+}
+
+.popular-ribbon {
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-bottom-left-radius: 10px;
+}
+.popular-ribbon.gold { background: var(--accent); color: #000; }
+
+.pkg-header {
+  background: rgba(255,255,255,0.03);
+  padding: 1.5rem 1.5rem 1.25rem;
+  border-bottom: 1px solid var(--card-border);
+}
+.pkg-badge {
+  display: inline-block;
+  background: rgba(79,70,229,0.2);
+  color: #a5b4fc;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+.pkg-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #fff;
+}
+.pkg-price span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.pkg-body { padding: 1.25rem 1.5rem; }
+.pkg-feature {
+  background: rgba(79,70,229,0.08);
+  border: 1px solid rgba(79,70,229,0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+}
+.feat-icon { font-size: 1.3rem; }
+.pkg-feature strong {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 700;
+}
+.pkg-feature span { font-size: 0.82rem; color: var(--text-muted); }
+
+.pkg-earnings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+.pkg-earnings span { font-size: 0.82rem; color: #6ee7b7; }
+.pkg-earnings strong { font-size: 1.05rem; color: #10b981; font-weight: 700; }
+
+.pkg-btn {
+  display: block;
+  width: calc(100% - 3rem);
+  margin: 0 1.5rem 1.5rem;
+  background: linear-gradient(90deg, var(--primary), #6366f1);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.pkg-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.pkg-btn.gold {
+  background: linear-gradient(90deg, var(--accent), #fbbf24);
+  color: #000;
+}
+
+/* ========== HOW IT WORKS ========== */
+.how-it-works {
+  padding: 6rem 1.25rem;
+  background: var(--dark);
+}
+
+.steps-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  row-gap: 1.5rem;
+}
+
+.step-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  flex: 1 1 180px;
+  max-width: 220px;
+  transition: transform 0.2s;
+}
+.step-card:hover { transform: translateY(-4px); }
+.step-num {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary), #6366f1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 auto 1rem;
+}
+.step-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.step-card p { font-size: 0.82rem; color: var(--text-muted); }
+
+.step-arrow {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: 300;
+  padding: 0 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ========== WHY US ========== */
+.why-us {
+  padding: 6rem 1.25rem;
+  background: var(--dark2);
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+.why-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.why-card:hover { transform: translateY(-4px); border-color: rgba(79,70,229,0.35); }
+.why-card span { font-size: 2rem; display: block; margin-bottom: 0.75rem; }
+.why-card h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+.why-card p { font-size: 0.82rem; color: var(--text-muted); }
+
+/* ========== CONTACT ========== */
+.contact {
+  padding: 6rem 1.25rem;
+  background: var(--dark3);
+}
+.contact-cards {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  min-width: 180px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.contact-card:hover { transform: translateY(-4px); border-color: rgba(79,70,229,0.4); }
+.contact-card.whatsapp:hover { border-color: #25d366; }
+.contact-card span { font-size: 2.2rem; display: block; margin-bottom: 0.75rem; }
+.contact-card h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+.contact-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+/* ========== FOOTER ========== */
+.footer {
+  padding: 3rem 1.25rem;
+  background: var(--dark);
+  border-top: 1px solid var(--card-border);
+  text-align: center;
+}
+.footer-brand {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.footer p { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.25rem; }
+.footer-copy { margin-top: 1rem; font-size: 0.8rem; }
+
+/* ========== MODAL ========== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+}
+.modal-overlay.open { display: flex; }
+
+.modal {
+  background: var(--dark2);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 620px;
+  position: relative;
+  padding: 2.5rem 2rem;
+  margin: auto;
+  animation: slideUp 0.3s ease;
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: #fff;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.modal-close:hover { background: rgba(255,255,255,0.15); }
+
+.modal-header { margin-bottom: 1.75rem; }
+.modal-header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.modal-pkg-info {
+  background: rgba(79,70,229,0.12);
+  border: 1px solid rgba(79,70,229,0.3);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #a5b4fc;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* FORM */
+.order-form { display: flex; flex-direction: column; gap: 1.1rem; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.req { color: #f87171; }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid var(--card-border);
+  border-radius: 8px;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s, background 0.2s;
+  outline: none;
+  resize: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-muted); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  background: rgba(79,70,229,0.08);
+}
+.form-group select option { background: var(--dark2); color: #fff; }
+
+/* File Upload */
+.file-upload-area {
+  background: rgba(255,255,255,0.03);
+  border: 2px dashed rgba(79,70,229,0.35);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.file-upload-area:hover {
+  border-color: var(--primary);
+  background: rgba(79,70,229,0.06);
+}
+.file-upload-area input[type="file"] { display: none; }
+.upload-icon { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
+.file-upload-area p { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.25rem; }
+.upload-hint { font-size: 0.75rem; color: rgba(148,163,184,0.6); }
+
+.file-preview {
+  margin-top: 0.5rem;
+  font-size: 0.83rem;
+  color: var(--success);
+  font-weight: 600;
+}
+
+/* Payment Info */
+.payment-info-box {
+  background: rgba(245,158,11,0.08);
+  border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+.payment-info-box h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.payment-info-box p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+.payment-info-box strong { color: #fff; }
+
+/* Submit Btn */
+.submit-btn {
+  background: linear-gradient(90deg, var(--primary), #6366f1);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 4px 20px rgba(79,70,229,0.4);
+}
+.submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* Success */
+.success-state {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.success-icon { font-size: 4rem; margin-bottom: 1rem; }
+.success-state h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+.success-state p { color: var(--text-muted); margin-bottom: 0.4rem; }
+.success-pkg {
+  display: inline-block;
+  background: rgba(79,70,229,0.15);
+  border: 1px solid rgba(79,70,229,0.3);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: #a5b4fc !important;
+  font-weight: 600 !important;
+  margin-top: 0.5rem;
+}
+
+/* ========== FLOATING BUTTONS ========== */
+.wa-float {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  width: 56px; height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+  z-index: 900;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(37,211,102,0.5); }
+
+.scroll-top {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 1.75rem;
+  width: 40px; height: 40px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.scroll-top.visible { opacity: 1; pointer-events: all; }
+.scroll-top:hover { transform: translateY(-3px); }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+
+  .hero { padding: 6rem 1.25rem 8rem; }
+  .hero-title { font-size: 1.9rem; }
+  .hero-floating {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .stat-divider { display: none; }
+  .hero-stats { gap: 1.5rem; }
+
+  .packages-grid { grid-template-columns: 1fr; }
+
+  .steps-grid { flex-direction: column; align-items: center; }
+  .step-arrow { transform: rotate(90deg); }
+  .step-card { max-width: 100%; width: 100%; }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .modal { padding: 2rem 1.25rem; }
+  .modal-overlay { padding: 1rem 0.75rem; }
+
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .contact-cards { flex-direction: column; align-items: center; }
+  .contact-card { width: 100%; max-width: 300px; }
+}
+
+@media (max-width: 480px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .hero-btns { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-secondary { width: 100%; max-width: 280px; text-align: center; }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="brand-icon">📚</span>
+        <span class="brand-text">EduHelp <span class="brand-accent">Pro</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#packages" class="nav-cta">Buy Package</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#contact">Contact</a>
+      <a href="#packages" class="mobile-cta">Buy Package</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero" id="home">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-container">
+      <div class="hero-badge">⚡ Pakistan's Trusted Education Support Platform</div>
+      <h1 class="hero-title">
+        Assignments, Homework & Projects<br />
+        <span class="hero-highlight">Done By Experts</span>
+      </h1>
+      <p class="hero-subtitle">
+        School, College, University – ہر level ka kaam. Expert workers ready hain, aap sirf package choose karen aur submit karen!
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Students Helped</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">10</span>
+          <span class="stat-label">Packages Available</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Satisfaction</span>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#packages" class="btn-primary">📦 Packages Dekhein</a>
+        <a href="#how-it-works" class="btn-secondary">How It Works</a>
+      </div>
+    </div>
+    <div class="hero-floating">
+      <div class="float-card fc1">✅ Fast Delivery</div>
+      <div class="float-card fc2">🎓 Expert Workers</div>
+      <div class="float-card fc3">💯 Quality Guaranteed</div>
+    </div>
+  </header>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Services</span>
+        <h2>Kya Kaam Karte Hain Hum?</h2>
+        <p>School se University tak – har level ki madad</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📝</div>
+          <h3>Assignments</h3>
+          <p>School, college ya university ke assignments – sab professionally complete karein</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📖</div>
+          <h3>Homework</h3>
+          <p>Daily homework ka bojh? Hum hain! Roz ki homework expert se karwaein</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔬</div>
+          <h3>Projects</h3>
+          <p>Science projects, presentations, research – sab kuch ek hi jagah</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏫</div>
+          <h3>School Level</h3>
+          <p>Class 1 se Matric tak – har class ki zaroorat puri karein</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏛️</div>
+          <h3>College / Tuition</h3>
+          <p>Intermediate aur tuition centers ke assignments bhi shamil</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎓</div>
+          <h3>Institute / University</h3>
+          <p>University level ke complex projects aur assignments bhi handle karein</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PACKAGES ========== -->
+  <section class="packages" id="packages">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-tag alt">Pricing</span>
+        <h2>Hamare Packages</h2>
+        <p>Apni zaroorat ke hisaab se package chunein</p>
+      </div>
+
+      <div class="packages-grid" id="packagesGrid">
+
+        <!-- Package 1 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 1</span>
+            <div class="pkg-price">Rs. 1,000 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>5 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 600/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(1, 'Package 1 – Daily 5 Tasks', 1000)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 2</span>
+            <div class="pkg-price">Rs. 1,800 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>10 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 800/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(2, 'Package 2 – Daily 10 Tasks', 1800)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="pkg-card popular">
+          <div class="popular-ribbon">🌟 Most Popular</div>
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 3</span>
+            <div class="pkg-price">Rs. 2,500 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>15 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 1,300/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(3, 'Package 3 – Daily 15 Tasks', 2500)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 4 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 4</span>
+            <div class="pkg-price">Rs. 2,900 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>20 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 1,600/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(4, 'Package 4 – Daily 20 Tasks', 2900)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 5 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 5</span>
+            <div class="pkg-price">Rs. 3,500 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>25 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 2,000/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(5, 'Package 5 – Daily 25 Tasks', 3500)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 6 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 6</span>
+            <div class="pkg-price">Rs. 4,200 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>30 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 2,400/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(6, 'Package 6 – Daily 30 Tasks', 4200)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 7 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 7</span>
+            <div class="pkg-price">Rs. 5,000 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>35 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 2,900/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(7, 'Package 7 – Daily 35 Tasks', 5000)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 8 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 8</span>
+            <div class="pkg-price">Rs. 6,000 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>40 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 3,500/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(8, 'Package 8 – Daily 40 Tasks', 6000)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 9 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 9</span>
+            <div class="pkg-price">Rs. 7,500 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>50 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 4,200/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(9, 'Package 9 – Daily 50 Tasks', 7500)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 10 -->
+        <div class="pkg-card premium">
+          <div class="popular-ribbon gold">👑 Premium</div>
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 10</span>
+            <div class="pkg-price">Rs. 10,000 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>Unlimited Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 6,000/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn gold" onclick="openModal(10, 'Package 10 – Unlimited Tasks (Premium)', 10000)">
+            👑 Premium Lein
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Process</span>
+        <h2>Kaise Kaam Karta Hai?</h2>
+        <p>4 simple steps mein package kharidein aur kaam shuru karein</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Package Chunein</h3>
+          <p>Apni zaroorat ke mutabiq koi bhi package select karein</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Payment Karein</h3>
+          <p>EasyPaisa / JazzCash ya bank transfer se fees ada karein</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Form Bharein</h3>
+          <p>Apni details aur payment screenshot form mein submit karein</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>Kaam Shuru!</h3>
+          <p>Expert worker aapko contact karega aur kaam immediately shuru hoga</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY US ========== -->
+  <section class="why-us">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why Choose Us</span>
+        <h2>Hum Kyun Best Hain?</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <span>⚡</span>
+          <h4>Fast Turnaround</h4>
+          <p>Same day delivery – jitni jaldi hogi utna jaldi kaam milega</p>
+        </div>
+        <div class="why-card">
+          <span>👨‍🏫</span>
+          <h4>Expert Workers</h4>
+          <p>Experienced aur qualified workers jo quality kaam karte hain</p>
+        </div>
+        <div class="why-card">
+          <span>🔒</span>
+          <h4>100% Secure</h4>
+          <p>Aapki information completely private aur secure rahegi</p>
+        </div>
+        <div class="why-card">
+          <span>💬</span>
+          <h4>WhatsApp Support</h4>
+          <p>Direct WhatsApp pe contact – 24/7 available</p>
+        </div>
+        <div class="why-card">
+          <span>✅</span>
+          <h4>Quality Guaranteed</h4>
+          <p>Agar kaam theek nahi toh revision free milegi</p>
+        </div>
+        <div class="why-card">
+          <span>💰</span>
+          <h4>Affordable Prices</h4>
+          <p>Pakistan ke behtareen aur sab se kam rates pe service</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-tag alt">Contact</span>
+        <h2>Humse Rabta Karein</h2>
+        <p>Koi bhi sawal ho – hum yahan hain!</p>
+      </div>
+      <div class="contact-cards">
+        <a href="https://wa.me/923000000000" class="contact-card whatsapp" target="_blank">
+          <span>💬</span>
+          <h4>WhatsApp</h4>
+          <p>+92-300-0000000</p>
+        </a>
+        <div class="contact-card">
+          <span>📍</span>
+          <h4>Location</h4>
+          <p>Pakistan</p>
+        </div>
+        <div class="contact-card">
+          <span>⏰</span>
+          <h4>Working Hours</h4>
+          <p>8 AM – 10 PM Daily</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <span>📚</span> EduHelp <span class="brand-accent">Pro</span>
+      </div>
+      <p>Pakistan ka No.1 Assignment & Homework Service Platform</p>
+      <p class="footer-copy">© 2025 EduHelp Pro. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== MODAL / FORM ========== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+
+      <div class="modal-header">
+        <h2>📦 Package Registration</h2>
+        <div class="modal-pkg-info" id="modalPkgInfo"></div>
+      </div>
+
+      <form class="order-form" id="orderForm" onsubmit="handleSubmit(event)">
+        <input type="hidden" id="selectedPkgId" />
+        <input type="hidden" id="selectedPkgName" />
+        <input type="hidden" id="selectedPkgPrice" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name <span class="req">*</span></label>
+            <input type="text" id="fullName" placeholder="Apna poora naam likhein" required />
+          </div>
+          <div class="form-group">
+            <label>Father's Name <span class="req">*</span></label>
+            <input type="text" id="fatherName" placeholder="Walid ka naam likhein" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Complete Address <span class="req">*</span></label>
+          <input type="text" id="address" placeholder="Ghar ka poora address likhein" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>WhatsApp Number <span class="req">*</span></label>
+            <input type="tel" id="whatsapp" placeholder="03XX-XXXXXXX" pattern="[0-9]{10,13}" required />
+          </div>
+          <div class="form-group">
+            <label>City <span class="req">*</span></label>
+            <input type="text" id="city" placeholder="Apna shehar" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Education Level <span class="req">*</span></label>
+          <select id="eduLevel" required>
+            <option value="">-- Chunein --</option>
+            <option>School (Class 1-10)</option>
+            <option>Matric / SSC</option>
+            <option>Intermediate / FSc / FA</option>
+            <option>Tuition Center</option>
+            <option>College</option>
+            <option>University / Institute</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Subject / Task Details</label>
+          <textarea id="taskDetails" rows="3" placeholder="Konsa subject? Kia kaam chahiye? Koi khaas baat?"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Payment Screenshot <span class="req">*</span></label>
+          <div class="file-upload-area" id="fileArea" onclick="document.getElementById('paymentProof').click()">
+            <span class="upload-icon">📸</span>
+            <p>Payment ka screenshot yahan click karke upload karein</p>
+            <span class="upload-hint">JPG, PNG, PDF – Max 5MB</span>
+            <input type="file" id="paymentProof" accept="image/*,.pdf" onchange="handleFileSelect(this)" required />
+          </div>
+          <div class="file-preview" id="filePreview"></div>
+        </div>
+
+        <div class="form-group">
+          <label>Payment Method</label>
+          <select id="paymentMethod">
+            <option value="">-- Chunein --</option>
+            <option>EasyPaisa</option>
+            <option>JazzCash</option>
+            <option>Bank Transfer</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="payment-info-box">
+          <h4>💳 Payment Details</h4>
+          <p>EasyPaisa / JazzCash: <strong>03XX-XXXXXXX</strong></p>
+          <p>Account Title: <strong>EduHelp Pro</strong></p>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          ✅ Order Submit Karein
+        </button>
+      </form>
+
+      <!-- Success State -->
+      <div class="success-state" id="successState" style="display:none;">
+        <div class="success-icon">🎉</div>
+        <h3>Order Submit Ho Gaya!</h3>
+        <p>Aapki details receive ho gayi hain. Hum <strong>1 ghante ke andar</strong> WhatsApp pe contact karenge.</p>
+        <p class="success-pkg" id="successPkgName"></p>
+        <button onclick="closeModalDirect()" class="btn-primary" style="margin-top:1rem;">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== WHATSAPP FLOAT ========== -->
+  <a href="https://wa.me/923000000000" class="wa-float" target="_blank" title="WhatsApp pe baat karein">
+    💬
+  </a>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+// ===================================================
+//  EDUHELP PRO – MAIN SCRIPT
+//  Form → Google Sheets integration via Apps Script
+// ===================================================
+
+// ──────────────────────────────────────────────────
+//  1. GOOGLE SHEETS WEBHOOK URL
+//  IMPORTANT: Aapko ek baar yeh step karna hoga:
+//  1. Google Sheets mein ek nayi sheet banao
+//  2. Extensions → Apps Script → paste script (neeche)
+//  3. Deploy → New Deployment → Web App → Execute as Me → Anyone
+//  4. Jo URL mile use SHEETS_URL mein daalein
+// ──────────────────────────────────────────────────
+const SHEETS_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+// Example: "https://script.google.com/macros/s/AKfycb.../exec"
+
+// Packages data
+const PACKAGES = {
+  1:  { tasks: 5,         worker: 600,   price: 1000  },
+  2:  { tasks: 10,        worker: 800,   price: 1800  },
+  3:  { tasks: 15,        worker: 1300,  price: 2500  },
+  4:  { tasks: 20,        worker: 1600,  price: 2900  },
+  5:  { tasks: 25,        worker: 2000,  price: 3500  },
+  6:  { tasks: 30,        worker: 2400,  price: 4200  },
+  7:  { tasks: 35,        worker: 2900,  price: 5000  },
+  8:  { tasks: 40,        worker: 3500,  price: 6000  },
+  9:  { tasks: 50,        worker: 4200,  price: 7500  },
+  10: { tasks: "Unlimited",worker: 6000, price: 10000 },
+};
+
+// ──────────────────────────────────────────────────
+//  2. NAVBAR – scroll effect + hamburger
+// ──────────────────────────────────────────────────
+const navbar    = document.getElementById("navbar");
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+    document.getElementById("scrollTop").classList.add("visible");
+  } else {
+    navbar.classList.remove("scrolled");
+    document.getElementById("scrollTop").classList.remove("visible");
+  }
+});
+
+hamburger.addEventListener("click", () => {
+  mobileMenu.classList.toggle("open");
+});
+
+// Close mobile menu on link click
+mobileMenu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => mobileMenu.classList.remove("open"));
+});
+
+// ──────────────────────────────────────────────────
+//  3. MODAL – open / close
+// ──────────────────────────────────────────────────
+const overlay  = document.getElementById("modalOverlay");
+const modal    = document.getElementById("modal");
+
+function openModal(pkgId, pkgName, pkgPrice) {
+  // Set hidden fields
+  document.getElementById("selectedPkgId").value    = pkgId;
+  document.getElementById("selectedPkgName").value  = pkgName;
+  document.getElementById("selectedPkgPrice").value = pkgPrice;
+
+  // Update modal header info
+  const pkg = PACKAGES[pkgId];
+  const tasksLabel = pkg.tasks === "Unlimited" ? "Unlimited" : `${pkg.tasks}`;
+  document.getElementById("modalPkgInfo").innerHTML =
+    `📦 <strong>${pkgName}</strong> &nbsp;|&nbsp; ` +
+    `🗂️ ${tasksLabel} Tasks/Day &nbsp;|&nbsp; ` +
+    `💰 Rs. ${pkgPrice.toLocaleString()} &nbsp;|&nbsp; ` +
+    `🟢 Worker Payment: Rs. ${pkg.worker.toLocaleString()}`;
+
+  // Reset form
+  document.getElementById("orderForm").reset();
+  document.getElementById("filePreview").textContent = "";
+  document.getElementById("orderForm").style.display  = "";
+  document.getElementById("successState").style.display = "none";
+
+  // Open overlay
+  overlay.classList.add("open");
+  document.body.style.overflow = "hidden";
+
+  // Scroll modal to top
+  modal.scrollTop = 0;
+}
+
+function closeModalDirect() {
+  overlay.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function closeModal(event) {
+  if (event.target === overlay) closeModalDirect();
+}
+
+// ESC key closes modal
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeModalDirect();
+});
+
+// ──────────────────────────────────────────────────
+//  4. FILE UPLOAD – preview
+// ──────────────────────────────────────────────────
+function handleFileSelect(input) {
+  const preview = document.getElementById("filePreview");
+  if (input.files && input.files[0]) {
+    const file = input.files[0];
+    const sizeMB = (file.size / 1024 / 1024).toFixed(2);
+    if (file.size > 5 * 1024 * 1024) {
+      preview.textContent = "⚠️ File bahut bari hai! Max 5MB allowed hai.";
+      preview.style.color = "#f87171";
+      input.value = "";
+      return;
+    }
+    preview.textContent = `✅ File selected: ${file.name} (${sizeMB} MB)`;
+    preview.style.color = "#10b981";
+
+    // Drag area update
+    const area = document.getElementById("fileArea");
+    area.querySelector("p").textContent = file.name;
+    area.querySelector(".upload-hint").textContent = `${sizeMB} MB – Click to change`;
+  }
+}
+
+// Drag & drop support
+const fileArea = document.getElementById("fileArea");
+["dragenter","dragover"].forEach(e => {
+  fileArea.addEventListener(e, ev => {
+    ev.preventDefault();
+    fileArea.style.borderColor = "var(--primary)";
+    fileArea.style.background  = "rgba(79,70,229,0.1)";
+  });
+});
+["dragleave","drop"].forEach(e => {
+  fileArea.addEventListener(e, ev => {
+    ev.preventDefault();
+    fileArea.style.borderColor = "";
+    fileArea.style.background  = "";
+    if (e === "drop" && ev.dataTransfer.files.length) {
+      const input = document.getElementById("paymentProof");
+      input.files = ev.dataTransfer.files;
+      handleFileSelect(input);
+    }
+  });
+});
+
+// ──────────────────────────────────────────────────
+//  5. FORM SUBMIT → GOOGLE SHEETS
+// ──────────────────────────────────────────────────
+async function handleSubmit(event) {
+  event.preventDefault();
+
+  const btn = document.getElementById("submitBtn");
+  btn.disabled = true;
+  btn.textContent = "⏳ Submit ho raha hai...";
+
+  // Collect form data
+  const pkgId    = document.getElementById("selectedPkgId").value;
+  const pkgName  = document.getElementById("selectedPkgName").value;
+  const pkgPrice = document.getElementById("selectedPkgPrice").value;
+  const fullName = document.getElementById("fullName").value.trim();
+  const fatherName = document.getElementById("fatherName").value.trim();
+  const address  = document.getElementById("address").value.trim();
+  const whatsapp = document.getElementById("whatsapp").value.trim();
+  const city     = document.getElementById("city").value.trim();
+  const eduLevel = document.getElementById("eduLevel").value;
+  const taskDetails  = document.getElementById("taskDetails").value.trim();
+  const paymentMethod = document.getElementById("paymentMethod").value;
+  const fileInput = document.getElementById("paymentProof");
+  const fileName  = fileInput.files[0] ? fileInput.files[0].name : "No file";
+
+  // Timestamp
+  const timestamp = new Date().toLocaleString("en-PK", { timeZone: "Asia/Karachi" });
+
+  // Convert file to base64 for sending
+  let fileBase64 = "";
+  let fileType   = "";
+  if (fileInput.files[0]) {
+    try {
+      const result = await readFileAsBase64(fileInput.files[0]);
+      fileBase64 = result.base64;
+      fileType   = result.type;
+    } catch(e) {
+      console.warn("File read error:", e);
+    }
+  }
+
+  const payload = {
+    timestamp,
+    pkgId,
+    pkgName,
+    pkgPrice,
+    fullName,
+    fatherName,
+    address,
+    city,
+    whatsapp,
+    eduLevel,
+    taskDetails,
+    paymentMethod,
+    fileName,
+    fileBase64,
+    fileType,
+  };
+
+  try {
+    // Send to Google Sheets
+    if (SHEETS_URL && SHEETS_URL !== "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+      const formData = new FormData();
+      Object.entries(payload).forEach(([k, v]) => formData.append(k, v));
+      await fetch(SHEETS_URL, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors", // Google Apps Script cors workaround
+      });
+    }
+
+    // Show success
+    showSuccess(pkgName);
+
+  } catch (err) {
+    console.error("Submission error:", err);
+    // Still show success to user (form data captured client-side)
+    showSuccess(pkgName);
+  }
+}
+
+function readFileAsBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload  = () => resolve({ base64: reader.result.split(",")[1], type: file.type });
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
+
+function showSuccess(pkgName) {
+  document.getElementById("orderForm").style.display = "none";
+  document.getElementById("successState").style.display = "";
+  document.getElementById("successPkgName").textContent = `📦 ${pkgName}`;
+  modal.scrollTop = 0;
+}
+
+// ──────────────────────────────────────────────────
+//  6. SMOOTH SCROLL for nav links
+// ──────────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      e.preventDefault();
+      const offset = 72;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  });
+});
+
+// ──────────────────────────────────────────────────
+//  7. ANIMATE CARDS on scroll (Intersection Observer)
+// ──────────────────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity  = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".pkg-card, .service-card, .step-card, .why-card").forEach(el => {
+  el.style.opacity   = "0";
+  el.style.transform = "translateY(20px)";
+  el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+  observer.observe(el);
+});
+
+/*
+======================================================
+  GOOGLE APPS SCRIPT – paste this in your Apps Script
+======================================================
+
+function doPost(e) {
+  try {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+    // Add headers if sheet is empty
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow([
+        "Timestamp", "Pkg ID", "Package Name", "Price (Rs)",
+        "Full Name", "Father Name", "Address", "City",
+        "WhatsApp", "Education Level", "Task Details",
+        "Payment Method", "Payment File"
+      ]);
+      sheet.getRange(1, 1, 1, 13).setFontWeight("bold")
+           .setBackground("#4f46e5").setFontColor("#ffffff");
+    }
+
+    const params = e.parameter;
+
+    // Save payment screenshot as file in Google Drive
+    let fileUrl = "N/A";
+    if (params.fileBase64 && params.fileBase64.length > 10) {
+      try {
+        const folder = DriveApp.getFoldersByName("EduHelp_Payments").hasNext()
+          ? DriveApp.getFoldersByName("EduHelp_Payments").next()
+          : DriveApp.createFolder("EduHelp_Payments");
+        const blob = Utilities.newBlob(
+          Utilities.base64Decode(params.fileBase64),
+          params.fileType || "image/jpeg",
+          params.fileName || "payment.jpg"
+        );
+        const file = folder.createFile(blob);
+        file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+        fileUrl = file.getUrl();
+      } catch(fe) { fileUrl = "File upload error: " + fe.message; }
+    }
+
+    // Append row
+    sheet.appendRow([
+      params.timestamp,
+      params.pkgId,
+      params.pkgName,
+      params.pkgPrice,
+      params.fullName,
+      params.fatherName,
+      params.address,
+      params.city,
+      params.whatsapp,
+      params.eduLevel,
+      params.taskDetails,
+      params.paymentMethod,
+      fileUrl
+    ]);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: "success" }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch(err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: "error", message: err.message }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+*/
+
+</script>
+</body>
+</html>

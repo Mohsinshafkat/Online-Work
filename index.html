@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduHelp Pro – Assignments, Homework & Projects Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="brand-icon">📚</span>
+        <span class="brand-text">EduHelp <span class="brand-accent">Pro</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#packages" class="nav-cta">Buy Package</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#contact">Contact</a>
+      <a href="#packages" class="mobile-cta">Buy Package</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero" id="home">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-container">
+      <div class="hero-badge">⚡ Pakistan's Trusted Education Support Platform</div>
+      <h1 class="hero-title">
+        Assignments, Homework & Projects<br />
+        <span class="hero-highlight">Done By Experts</span>
+      </h1>
+      <p class="hero-subtitle">
+        School, College, University – ہر level ka kaam. Expert workers ready hain, aap sirf package choose karen aur submit karen!
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Students Helped</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">10</span>
+          <span class="stat-label">Packages Available</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Satisfaction</span>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#packages" class="btn-primary">📦 Packages Dekhein</a>
+        <a href="#how-it-works" class="btn-secondary">How It Works</a>
+      </div>
+    </div>
+    <div class="hero-floating">
+      <div class="float-card fc1">✅ Fast Delivery</div>
+      <div class="float-card fc2">🎓 Expert Workers</div>
+      <div class="float-card fc3">💯 Quality Guaranteed</div>
+    </div>
+  </header>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Services</span>
+        <h2>Kya Kaam Karte Hain Hum?</h2>
+        <p>School se University tak – har level ki madad</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📝</div>
+          <h3>Assignments</h3>
+          <p>School, college ya university ke assignments – sab professionally complete karein</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📖</div>
+          <h3>Homework</h3>
+          <p>Daily homework ka bojh? Hum hain! Roz ki homework expert se karwaein</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔬</div>
+          <h3>Projects</h3>
+          <p>Science projects, presentations, research – sab kuch ek hi jagah</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏫</div>
+          <h3>School Level</h3>
+          <p>Class 1 se Matric tak – har class ki zaroorat puri karein</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏛️</div>
+          <h3>College / Tuition</h3>
+          <p>Intermediate aur tuition centers ke assignments bhi shamil</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎓</div>
+          <h3>Institute / University</h3>
+          <p>University level ke complex projects aur assignments bhi handle karein</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PACKAGES ========== -->
+  <section class="packages" id="packages">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-tag alt">Pricing</span>
+        <h2>Hamare Packages</h2>
+        <p>Apni zaroorat ke hisaab se package chunein</p>
+      </div>
+
+      <div class="packages-grid" id="packagesGrid">
+
+        <!-- Package 1 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 1</span>
+            <div class="pkg-price">Rs. 1,000 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>5 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 600/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(1, 'Package 1 – Daily 5 Tasks', 1000)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 2</span>
+            <div class="pkg-price">Rs. 1,800 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>10 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 800/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(2, 'Package 2 – Daily 10 Tasks', 1800)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="pkg-card popular">
+          <div class="popular-ribbon">🌟 Most Popular</div>
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 3</span>
+            <div class="pkg-price">Rs. 2,500 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>15 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 1,300/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(3, 'Package 3 – Daily 15 Tasks', 2500)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 4 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 4</span>
+            <div class="pkg-price">Rs. 2,900 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>20 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 1,600/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(4, 'Package 4 – Daily 20 Tasks', 2900)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 5 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 5</span>
+            <div class="pkg-price">Rs. 3,500 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>25 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 2,000/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(5, 'Package 5 – Daily 25 Tasks', 3500)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 6 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 6</span>
+            <div class="pkg-price">Rs. 4,200 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>30 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 2,400/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(6, 'Package 6 – Daily 30 Tasks', 4200)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 7 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 7</span>
+            <div class="pkg-price">Rs. 5,000 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>35 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 2,900/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(7, 'Package 7 – Daily 35 Tasks', 5000)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 8 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 8</span>
+            <div class="pkg-price">Rs. 6,000 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>40 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 3,500/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(8, 'Package 8 – Daily 40 Tasks', 6000)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 9 -->
+        <div class="pkg-card">
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 9</span>
+            <div class="pkg-price">Rs. 7,500 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>50 Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 4,200/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn" onclick="openModal(9, 'Package 9 – Daily 50 Tasks', 7500)">
+            🛒 Abhi Kharidein
+          </button>
+        </div>
+
+        <!-- Package 10 -->
+        <div class="pkg-card premium">
+          <div class="popular-ribbon gold">👑 Premium</div>
+          <div class="pkg-header">
+            <span class="pkg-badge">Package 10</span>
+            <div class="pkg-price">Rs. 10,000 <span>/daily</span></div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-feature main-feature">
+              <span class="feat-icon">📋</span>
+              <strong>Unlimited Tasks/Day</strong>
+              <span>Assignments, Homework ya Projects</span>
+            </div>
+            <div class="pkg-earnings">
+              <span>Worker Ko Milenge</span>
+              <strong>Rs. 6,000/day</strong>
+            </div>
+          </div>
+          <button class="pkg-btn gold" onclick="openModal(10, 'Package 10 – Unlimited Tasks (Premium)', 10000)">
+            👑 Premium Lein
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Process</span>
+        <h2>Kaise Kaam Karta Hai?</h2>
+        <p>4 simple steps mein package kharidein aur kaam shuru karein</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Package Chunein</h3>
+          <p>Apni zaroorat ke mutabiq koi bhi package select karein</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Payment Karein</h3>
+          <p>EasyPaisa / JazzCash ya bank transfer se fees ada karein</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Form Bharein</h3>
+          <p>Apni details aur payment screenshot form mein submit karein</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>Kaam Shuru!</h3>
+          <p>Expert worker aapko contact karega aur kaam immediately shuru hoga</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY US ========== -->
+  <section class="why-us">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why Choose Us</span>
+        <h2>Hum Kyun Best Hain?</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <span>⚡</span>
+          <h4>Fast Turnaround</h4>
+          <p>Same day delivery – jitni jaldi hogi utna jaldi kaam milega</p>
+        </div>
+        <div class="why-card">
+          <span>👨‍🏫</span>
+          <h4>Expert Workers</h4>
+          <p>Experienced aur qualified workers jo quality kaam karte hain</p>
+        </div>
+        <div class="why-card">
+          <span>🔒</span>
+          <h4>100% Secure</h4>
+          <p>Aapki information completely private aur secure rahegi</p>
+        </div>
+        <div class="why-card">
+          <span>💬</span>
+          <h4>WhatsApp Support</h4>
+          <p>Direct WhatsApp pe contact – 24/7 available</p>
+        </div>
+        <div class="why-card">
+          <span>✅</span>
+          <h4>Quality Guaranteed</h4>
+          <p>Agar kaam theek nahi toh revision free milegi</p>
+        </div>
+        <div class="why-card">
+          <span>💰</span>
+          <h4>Affordable Prices</h4>
+          <p>Pakistan ke behtareen aur sab se kam rates pe service</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-tag alt">Contact</span>
+        <h2>Humse Rabta Karein</h2>
+        <p>Koi bhi sawal ho – hum yahan hain!</p>
+      </div>
+      <div class="contact-cards">
+        <a href="https://wa.me/923000000000" class="contact-card whatsapp" target="_blank">
+          <span>💬</span>
+          <h4>WhatsApp</h4>
+          <p>+92-300-0000000</p>
+        </a>
+        <div class="contact-card">
+          <span>📍</span>
+          <h4>Location</h4>
+          <p>Pakistan</p>
+        </div>
+        <div class="contact-card">
+          <span>⏰</span>
+          <h4>Working Hours</h4>
+          <p>8 AM – 10 PM Daily</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <span>📚</span> EduHelp <span class="brand-accent">Pro</span>
+      </div>
+      <p>Pakistan ka No.1 Assignment & Homework Service Platform</p>
+      <p class="footer-copy">© 2025 EduHelp Pro. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== MODAL / FORM ========== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+
+      <div class="modal-header">
+        <h2>📦 Package Registration</h2>
+        <div class="modal-pkg-info" id="modalPkgInfo"></div>
+      </div>
+
+      <form class="order-form" id="orderForm" onsubmit="handleSubmit(event)">
+        <input type="hidden" id="selectedPkgId" />
+        <input type="hidden" id="selectedPkgName" />
+        <input type="hidden" id="selectedPkgPrice" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name <span class="req">*</span></label>
+            <input type="text" id="fullName" placeholder="Apna poora naam likhein" required />
+          </div>
+          <div class="form-group">
+            <label>Father's Name <span class="req">*</span></label>
+            <input type="text" id="fatherName" placeholder="Walid ka naam likhein" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Complete Address <span class="req">*</span></label>
+          <input type="text" id="address" placeholder="Ghar ka poora address likhein" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>WhatsApp Number <span class="req">*</span></label>
+            <input type="tel" id="whatsapp" placeholder="03XX-XXXXXXX" pattern="[0-9]{10,13}" required />
+          </div>
+          <div class="form-group">
+            <label>City <span class="req">*</span></label>
+            <input type="text" id="city" placeholder="Apna shehar" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Education Level <span class="req">*</span></label>
+          <select id="eduLevel" required>
+            <option value="">-- Chunein --</option>
+            <option>School (Class 1-10)</option>
+            <option>Matric / SSC</option>
+            <option>Intermediate / FSc / FA</option>
+            <option>Tuition Center</option>
+            <option>College</option>
+            <option>University / Institute</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Subject / Task Details</label>
+          <textarea id="taskDetails" rows="3" placeholder="Konsa subject? Kia kaam chahiye? Koi khaas baat?"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Payment Screenshot <span class="req">*</span></label>
+          <div class="file-upload-area" id="fileArea" onclick="document.getElementById('paymentProof').click()">
+            <span class="upload-icon">📸</span>
+            <p>Payment ka screenshot yahan click karke upload karein</p>
+            <span class="upload-hint">JPG, PNG, PDF – Max 5MB</span>
+            <input type="file" id="paymentProof" accept="image/*,.pdf" onchange="handleFileSelect(this)" required />
+          </div>
+          <div class="file-preview" id="filePreview"></div>
+        </div>
+
+        <div class="form-group">
+          <label>Payment Method</label>
+          <select id="paymentMethod">
+            <option value="">-- Chunein --</option>
+            <option>EasyPaisa</option>
+            <option>JazzCash</option>
+            <option>Bank Transfer</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="payment-info-box">
+          <h4>💳 Payment Details</h4>
+          <p>EasyPaisa / JazzCash: <strong>03XX-XXXXXXX</strong></p>
+          <p>Account Title: <strong>EduHelp Pro</strong></p>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          ✅ Order Submit Karein
+        </button>
+      </form>
+
+      <!-- Success State -->
+      <div class="success-state" id="successState" style="display:none;">
+        <div class="success-icon">🎉</div>
+        <h3>Order Submit Ho Gaya!</h3>
+        <p>Aapki details receive ho gayi hain. Hum <strong>1 ghante ke andar</strong> WhatsApp pe contact karenge.</p>
+        <p class="success-pkg" id="successPkgName"></p>
+        <button onclick="closeModalDirect()" class="btn-primary" style="margin-top:1rem;">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== WHATSAPP FLOAT ========== -->
+  <a href="https://wa.me/923000000000" class="wa-float" target="_blank" title="WhatsApp pe baat karein">
+    💬
+  </a>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
